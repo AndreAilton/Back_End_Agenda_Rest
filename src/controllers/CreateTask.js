@@ -1,4 +1,3 @@
-import User from '../models/users.js';
 import Task from '../models/Tasks.js';
 
 class CreateTaskController {
