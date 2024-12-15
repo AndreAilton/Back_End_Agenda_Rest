@@ -11,7 +11,15 @@ connectDB();
 const PORT = process.env.PORT || 3000;
 const app = express();
 
-app.use(cors());
+const corsOptions = {
+    origin: 'http://localhost:5173',   // URL do seu front-end
+    credentials: true,                 // Permite cookies e credenciais
+    methods: ['GET', 'POST', 'PUT', 'DELETE'] // Métodos permitidos
+   
+  };
+
+
+app.use(cors(corsOptions));
 app.use(express.json());
 app.use(cookieParser()); 
 app.use(router);
